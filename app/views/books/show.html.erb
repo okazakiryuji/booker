@@ -1,5 +1,22 @@
-<h2>タイトル</h2>
-<p><%= @book.title %></p>
+<head>
+  <styles type="books.scss">
+</head>
 
-<h2>本文</h2>
-<p><%= @book.body %></p>
+<body>
+    <%= form_with model: @book do |f| %>
+    <p>
+     <strong>Title:</strong>
+     <%= @book.title %>
+    </p>
+    <p>
+     <strong>Body:</strong>
+     <%= @book.body %>
+    </p>
+
+     <%= link_to "Edit", edit_book_path(@book.id) %>
+     |
+     <a class="back" href="/books">Back</a>
+
+</body>
+
+<% end %>
